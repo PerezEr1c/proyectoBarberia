@@ -1,0 +1,30 @@
+{
+  "db_engine": "mysql",
+
+  "mysql": {
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "",
+    "database": "ProjectBarber"
+  },
+
+  "postgres": {
+    "host": "localhost",
+    "port": 5432,
+    "user": "postgres",
+    "password": "",
+    "database": "barberos_db"
+  },
+
+  "comentarios_service_url": "http://localhost:8000/comentarios",
+
+  "api_base_comentarios": "http://localhost:8000",
+  "endpoints": {
+    "create": "/comentarios",
+    "read_all": "/comentarios",
+    "read_one": "/comentarios/{id}",
+    "update": "/comentarios/{id}",
+    "delete": "/comentarios/{id}"
+  }
+}

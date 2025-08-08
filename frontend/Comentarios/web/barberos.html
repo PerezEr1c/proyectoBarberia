@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestión de Barberos</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <!-- Navegación -->
+  <div class="navbar">
+    <div class="nav-left">
+      <a href="#" onclick="mostrarSeccion('crear')">Crear Barbero</a>
+      <a href="#" onclick="mostrarSeccion('lista'); listarBarberos()">Lista de Barberos</a>
+      <a href="#" onclick="mostrarSeccion('acciones')">Acciones de Barberos</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn-volver" onclick="location.href='index.html'">Volver al menú</button>
+    </div>
+  </div>
+
+  <!-- Crear Barbero -->
+  <div id="crear" class="seccion">
+    <h2>Crear Barbero</h2>
+    <form id="formBarbero">
+      <fieldset>
+        <legend>Datos del Barbero</legend>
+
+        <label for="nombreBarbero">Nombre:</label>
+        <input type="text" id="nombreBarbero" required />
+
+        <label for="especialidadBarbero">Especialidad:</label>
+        <input type="text" id="especialidadBarbero" required />
+
+        <label for="experienciaBarbero">Experiencia (años):</label>
+        <input type="number" id="experienciaBarbero" min="0" required />
+
+        <label for="barberiaSelect">Seleccionar Barbería:</label>
+        <select id="barberiaSelect" required>
+          <option value="">Seleccione una barbería</option>
+        </select>
+
+        <button type="submit">Guardar Barbero</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Lista de Barberos -->
+  <div id="lista" class="seccion" style="display:none;">
+    <h2>Lista de Barberos</h2>
+    <ul id="listaBarberos"></ul>
+  </div>
+
+  <!-- Acciones de Barberos -->
+  <div id="acciones" class="seccion" style="display:none;">
+    <h2>Buscar, Editar o Eliminar Barbero</h2>
+
+    <fieldset>
+      <legend>Buscar Barbero</legend>
+      <label for="idBuscarBarbero">ID del Barbero:</label>
+      <input type="text" id="idBuscarBarbero" />
+      <button type="button" onclick="buscarBarbero()">Buscar</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Editar Barbero</legend>
+
+      <label for="nombreBarberoAccion">Nombre:</label>
+      <input type="text" id="nombreBarberoAccion" required />
+
+      <label for="especialidadBarberoAccion">Especialidad:</label>
+      <input type="text" id="especialidadBarberoAccion" required />
+
+      <label for="experienciaBarberoAccion">Experiencia (años):</label>
+      <input type="number" id="experienciaBarberoAccion" min="0" required />
+
+      <label for="barberiaSelectAccion">Seleccionar Barbería:</label>
+      <select id="barberiaSelectAccion" required>
+        <option value="">Seleccione una barbería</option>
+      </select>
+
+      <button type="button" onclick="actualizarBarbero()">Actualizar</button>
+      <button type="button" onclick="eliminarBarbero()">Eliminar</button>
+    </fieldset>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config_barberos.js"></script>
+  <script src="app_barberos.js"></script>
+</body>
+</html>

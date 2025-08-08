@@ -1,0 +1,30 @@
+### Crear un nuevo comentario
+POST http://localhost:8000/comentarios/
+Content-Type: application/json
+
+{
+  "id_barbero": 4,
+  "cliente_nombre": "Juaniaaal",
+  "contenido": " muy profesional",
+  "calificacion": 2
+}
+
+### Obtener todos los comentarios
+GET http://localhost:8000/comentarios/
+
+### Obtener comentario por ID
+GET http://localhost:8000/comentarios/1
+
+### Actualizar un comentario existente
+PUT http://localhost:8000/comentarios/1
+Content-Type: application/json
+
+{
+  "id_barbero": 1,
+  "cliente_nombre": "Juan Pérez",
+  "contenido": "Servicio actualizado. Buena atención.",
+  "calificacion": 4,
+}
+
+### Eliminar un comentario
+DELETE http://localhost:8000/comentarios/1

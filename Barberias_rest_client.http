@@ -1,0 +1,30 @@
+### Crear una barbería
+POST http://localhost:8000/barberias/
+Content-Type: application/json
+
+{
+  "nombre": "Barbería Estilo Único",
+  "direccion": "Calle 123 #45-67",
+  "telefono": "3001234567",
+  "email": "contacto@barberiaestilo.com"
+}
+
+### Obtener todas las barberías
+GET http://localhost:8000/barberias/
+
+### Obtener barbería por ID
+GET http://localhost:8000/barberias/1
+
+### Actualizar una barbería
+PUT http://localhost:8000/barberias/1
+Content-Type: application/json
+
+{
+  "nombre": "Barbería Renovada",
+  "direccion": "Nueva dirección 999",
+  "telefono": "3007654321",
+  "email": "nuevo@barberiarenovada.com"
+}
+
+### Eliminar barbería por ID
+DELETE http://localhost:8000/barberias/1

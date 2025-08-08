@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gestión de Barberías</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <!-- Navegación -->
+    <div class="navbar">
+      <div class="nav-left">
+        <a href="#" onclick="mostrarSeccion('crear')">Crear Barbería</a>
+        <a href="#" onclick="mostrarSeccion('lista'); listarBarberias()">Lista de Barberías</a>
+        <a href="#" onclick="mostrarSeccion('acciones')">Acciones de Barberías</a>
+      </div>
+      <div class="nav-right">
+        <button class="btn-volver" onclick="location.href='index.html'">
+          Volver al menú
+        </button>
+      </div>
+    </div>
+
+    <!-- Crear Barbería -->
+    <div id="crear" class="seccion">
+      <h2>Crear Barbería</h2>
+      <form id="formBarberia">
+        <fieldset>
+          <legend>Datos de la Barbería</legend>
+
+          <label for="nombreBarberia">Nombre:</label>
+          <input type="text" id="nombreBarberia" required />
+
+          <label for="direccionBarberia">Dirección:</label>
+          <input type="text" id="direccionBarberia" required />
+
+          <label for="telefonoBarberia">Teléfono:</label>
+          <input type="text" id="telefonoBarberia" required />
+
+          <label for="emailBarberia">Email:</label>
+          <input type="email" id="emailBarberia" required />
+
+          <button type="submit">Guardar Barbería</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <!-- Lista de Barberías -->
+    <div id="lista" class="seccion">
+      <h2>Lista de Barberías</h2>
+      <fieldset>
+        <legend>Listado</legend>
+        <ul id="listaBarberias"></ul>
+      </fieldset>
+    </div>
+
+    <!-- Acciones de Barberías -->
+    <div id="acciones" class="seccion">
+      <h2>Buscar, Editar o Eliminar Barbería</h2>
+
+      <fieldset>
+        <legend>Buscar Barbería</legend>
+        <label for="idBuscarBarberia">ID de la Barbería:</label>
+        <input type="text" id="idBuscarBarberia" />
+        <button onclick="buscarBarberia()">Buscar</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Editar Barbería</legend>
+
+        <label for="nombreBarberiaAccion">Nombre:</label>
+        <input type="text" id="nombreBarberiaAccion" />
+
+        <label for="direccionBarberiaAccion">Dirección:</label>
+        <input type="text" id="direccionBarberiaAccion" />
+
+        <label for="telefonoBarberiaAccion">Teléfono:</label>
+        <input type="text" id="telefonoBarberiaAccion" />
+
+        <label for="emailBarberiaAccion">Email:</label>
+        <input type="email" id="emailBarberiaAccion" />
+
+        <button onclick="actualizarBarberia()">Actualizar</button>
+        <button onclick="eliminarBarberia()">Eliminar</button>
+      </fieldset>
+    </div>
+
+    <!-- Scripts -->
+    <script src="config_barberias.js"></script>
+    <script src="app_barberias.js"></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+### Crear un barbero
+POST http://localhost:8000/barberos/
+Content-Type: application/json
+
+{
+  "nombre": "Juanito",
+  "especialidad": "degradado",
+  "experiencia_anios": 3,
+  "id_barberia": 2
+}
+
+### Obtener todos los barberos
+GET http://localhost:8000/barberos/
+
+### Obtener barbero por ID
+GET http://localhost:8000/barberos/1
+
+### Actualizar un barbero
+PUT http://localhost:8000/barberos/1
+Content-Type: application/json
+
+{
+  "nombre": "Juan P. González",
+  "especialidad": "Fade y diseños",
+  "experiencia_anios": 6,
+  "id_barberia": 1
+}
+
+### Eliminar un barbero
+DELETE http://localhost:8000/barberos/1

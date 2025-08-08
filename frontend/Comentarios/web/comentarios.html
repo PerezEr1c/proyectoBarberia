@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestión de Comentarios</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <!-- Navegación -->
+  <div class="navbar">
+    <div class="nav-left">
+      <a href="#" onclick="mostrarSeccion('crear')">Crear Comentario</a>
+      <a href="#" onclick="mostrarSeccion('lista'); listarComentarios()">Lista de Comentarios</a>
+      <a href="#" onclick="mostrarSeccion('acciones')">Acciones de Comentarios</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn-volver" onclick="location.href='index.html'">Volver al menú</button>
+    </div>
+  </div>
+
+  <!-- Crear Comentario -->
+  <div id="crear" class="seccion">
+    <h2>Crear Comentario</h2>
+    <form id="formComentario">
+      <fieldset>
+        <legend>Datos del Comentario</legend>
+
+        <label for="email">Nombre del Cliente:</label>
+        <input type="text" id="email" required />
+
+        <label for="barberoSelect">Seleccionar Barbero:</label>
+        <select id="barberoSelect" required>
+          <option value="">Seleccione un barbero</option>
+        </select>
+        <input type="hidden" id="idBarbero" />
+
+        <label for="texto">Comentario:</label>
+        <textarea id="texto" required></textarea>
+
+        <label for="calificacion">Calificación (1 a 5):</label>
+        <input type="number" id="calificacion" min="1" max="5" required />
+
+        <button type="submit">Guardar Comentario</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Lista de Comentarios -->
+  <div id="lista" class="seccion" style="display:none;">
+    <h2>Lista de Comentarios</h2>
+    <ul id="listaComentarios"></ul>
+  </div>
+
+  <!-- Acciones de Comentarios -->
+  <div id="acciones" class="seccion" style="display:none;">
+    <h2>Buscar, Editar o Eliminar Comentario</h2>
+
+    <fieldset>
+      <legend>Buscar Comentario</legend>
+      <label for="idBuscar">ID del Comentario:</label>
+      <input type="text" id="idBuscar" />
+      <button type="button" onclick="buscarComentario()">Buscar</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Editar Comentario</legend>
+
+      <label for="barberoComentario">Barbero:</label>
+      <input type="text" id="barberoComentario" readonly />
+      <input type="hidden" id="idBarberoHidden" />
+
+      <label for="textoAccion">Comentario:</label>
+      <textarea id="textoAccion"></textarea>
+
+      <label for="emailAccion">Nombre del Cliente:</label>
+      <input type="text" id="emailAccion" />
+
+      <label for="calificacionAccion">Calificación (1 a 5):</label>
+      <input type="number" id="calificacionAccion" min="1" max="5" />
+
+      <button type="button" onclick="actualizarComentario()">Actualizar</button>
+      <button type="button" onclick="eliminarComentario()">Eliminar</button>
+    </fieldset>
+  </div>
+
+  <script src="config_comentarios.js"></script>
+  <script src="app_comentarios.js"></script>
+</body>
+</html>
