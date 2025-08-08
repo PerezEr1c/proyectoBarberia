@@ -3,24 +3,24 @@ POST http://localhost:8000/barberias/
 Content-Type: application/json
 
 {
-  "nombre": "Barbería Estilo Único",
+  "nombre": "Barbería juanito",
   "direccion": "Calle 123 #45-67",
-  "telefono": "3001234567",
-  "email": "contacto@barberiaestilo.com"
+  "telefono": "3001506",
+  "email": "contacto@gmail.com.com"
 }
 
 ### Obtener todas las barberías
 GET http://localhost:8000/barberias/
 
 ### Obtener barbería por ID
-GET http://localhost:8000/barberias/1
+GET http://localhost:8000/barberias/2
 
 ### Actualizar una barbería
-PUT http://localhost:8000/barberias/1
+PUT http://localhost:8000/barberias/2
 Content-Type: application/json
 
 {
-  "nombre": "Barbería Renovada",
+  "nombre": "Barbería nueva",
   "direccion": "Nueva dirección 999",
   "telefono": "3007654321",
   "email": "nuevo@barberiarenovada.com"
